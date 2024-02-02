@@ -23,7 +23,7 @@ jobs:
           echo "::set-output name=version::$VERSION"
       - name: Set Version as Env Variable
         run: echo "VERSION=${{ steps.extract_version.outputs.version }}" >> $GITHUB_ENV
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
