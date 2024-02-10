@@ -52,7 +52,6 @@ class StorageIOS : Storage {
 
     @OptIn(ExperimentalForeignApi::class)
     override fun delete(file: FilePath): Boolean {
-
         file.toNSURL().let {
             NSFileManager.defaultManager.removeItemAtURL(it, error = null)
         }
