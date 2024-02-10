@@ -30,7 +30,6 @@ val NSFileManager.DocumentDirectory
 
 
 class StorageIOS : Storage {
-    @OptIn(ExperimentalForeignApi::class)
     override fun write(file: FilePath, data: ByteArray) {
         NSFileManager.defaultManager.DocumentDirectory
             .URLByAppendingPathComponent(file.path)?.let {
