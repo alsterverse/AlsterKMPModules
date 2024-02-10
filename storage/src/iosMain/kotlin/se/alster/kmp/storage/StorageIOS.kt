@@ -52,14 +52,11 @@ class StorageIOS : Storage {
 
     @OptIn(ExperimentalForeignApi::class)
     override fun delete(file: FilePath): Boolean {
-        NSFileManager.defaultManager.DocumentDirectory
-            .URLByAppendingPathComponent(file.path)?.let {
-                NSFileManager.defaultManager.removeItemAtURL(it, error = null)
-            }
-        return !NSFileManager.defaultManager.fileExistsAtPath(
-            NSFileManager.defaultManager.DocumentDirectory
-                .URLByAppendingPathComponent(file.path)?.path!!
-        )
+
+        file.toNSURL().let {
+            NSFileManager.defaultManager.removeItemAtURL(it, error = null)
+        }
+        return !NSFileManager.defaultManager.fileExistsAtPath(file.toNSURL().path!!)
     }
 
     private suspend fun NSURL.readData(): NSData {
