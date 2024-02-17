@@ -1,4 +1,6 @@
-# Kotlin Multiplatform Module
+# Kotlin Multiplatform Modules
+
+# Archived -> use [KMPModules](https://github.com/rackaracka123/KMPModules) instead
 
 This Kotlin Multiplatform module facilitates seamless integration with your projects, providing a common codebase across multiple platforms. To ensure secure access to releases, follow the steps below:
 
